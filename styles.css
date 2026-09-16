@@ -283,20 +283,6 @@ body.is-ready .footer {
 
 body.is-ready .hero__video { transform: scale(1.18); }
 
-.hero__endframe {
-  position: absolute;
-  z-index: 0;
-  inset: 0;
-  background: url("assets/hero-end.png") center / cover no-repeat;
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(1.18);
-  transition: opacity 1000ms var(--ease);
-}
-
-.hero.is-stopping .hero__endframe,
-.hero.is-stopped .hero__endframe { opacity: 1; }
-
 .hero__shade {
   position: absolute;
   z-index: 1;
@@ -317,10 +303,7 @@ body.is-ready .hero__video { transform: scale(1.18); }
   font-size: 72px;
   line-height: 1;
   letter-spacing: -0.04em;
-  background-image: linear-gradient(90deg, #ffffff, #9b9b9b);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+  color: #ffffff;
 }
 
 .hero__lead {
@@ -803,7 +786,6 @@ summary:focus-visible,
   .hero { min-height: 760px; }
   .hero__video { object-position: 58% center; opacity: 0.62; transform: scale(1.23); }
   body.is-ready .hero__video { transform: scale(1.20); }
-  .hero__endframe { background-position: 58% center; transform: scale(1.20); }
   .hero__shade { background: rgba(0, 0, 0, 0.34); }
   .hero__content { padding-bottom: 112px; }
   .hero h1 { font-size: 48px; }

@@ -20,27 +20,6 @@ function updateLoader(now) {
 
 requestAnimationFrame(updateLoader);
 
-const heroVideo = document.querySelector(".hero__video");
-const hero = heroVideo?.closest(".hero");
-
-function prepareVideoEnd() {
-  if (!heroVideo || !hero || !Number.isFinite(heroVideo.duration)) return;
-  const remaining = heroVideo.duration - heroVideo.currentTime;
-  if (remaining <= 0.85) {
-    hero.classList.add("is-stopping");
-    heroVideo.dataset.playback = "ending";
-  }
-}
-
-function holdVideoEnd() {
-  if (!heroVideo || !hero) return;
-  hero.classList.add("is-stopped");
-  heroVideo.dataset.playback = "stopped";
-}
-
-heroVideo?.addEventListener("timeupdate", prepareVideoEnd);
-heroVideo?.addEventListener("ended", holdVideoEnd);
-
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileMenu = document.querySelector(".mobile-menu");
 
